@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import'../css/home.css'
+import'../../css/home.css'
 
-import homeService from '../services/homeService.js'
-import NowPlaying from '../components/home/NowPlaying.js'
-import ComingSoon from '../components/home/ComingSoon.js'
+import homeService from '../../services/homeService.js'
+import NowPlaying from '../../components/home/NowPlaying.js'
+import ComingSoon from '../../components/home/ComingSoon.js'
 
 let mySwiper=null
 

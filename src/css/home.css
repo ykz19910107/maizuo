@@ -5,12 +5,12 @@
 #home>.main{position: absolute;top: 0;bottom: 0;left: 0;overflow: hidden;width: 100%;}
 #home>.main>.wrap {background: rgb(235,235,235);overflow: hidden;width: 100%;}
 #home>.main>.wrap img{width: 280px;height: 160px;}
-#home>.main>.wrap a{display: block;background: rgb(249,249,249);font-size: 12px;position: relative;margin: 20px;    box-shadow: 0.5px 0.5px 1px #a8a8a8;box-sizing: border-box;}
+#home>.main>.wrap a{display: block;background: rgb(249,249,249);font-size: 12px;position: relative;margin: 20px;box-shadow: 0.5px 0.5px 1px #a8a8a8;box-sizing: border-box;}
 #home>.main>.wrap a div:nth-of-type(1){padding: 10px 10px 5px;}
 #home>.main>.wrap a div:nth-of-type(1) p{color: #9a9a9a;}
 #home>.main>.wrap a div:nth-of-type(1) h3{color: #000000;font-size: 12px;}
 #home>.main>.wrap a div:nth-of-type(2){color: #f78360;font-size: 18px;position: absolute;right: 10px;bottom: 10px;}
-#home>.main>.wrap .more{width: 160px;height: 30px;border: 1px solid #aaa;text-align: center;line-height: 30px;box-sizing: border-box;border-radius: 15px;margin: 0 auto;color: #616161;margin-bottom: 30px;}
+#home>.main>.wrap .more{width: 160px;height: 30px;border: 1px solid #aaa;text-align: center;line-height: 30px;box-sizing: border-box;border-radius: 15px;margin: 0 auto;color: #616161;margin-bottom: 30px;display: block;background-color: initial;box-shadow:initial}
 #home>.main>.wrap a div:nth-of-type(1) h3 span{float: right;color:#f78360;font-size: 12px;}
 
 #home>.main>.wrap .coming-title{display:block;width: 65px;height: 20px;color: #eee;background: #a7a7a7;border-radius: 5px;margin: 0 auto;position: absolute;top: -10px;left: 50%;margin-left: -32.5px;text-align: center;}

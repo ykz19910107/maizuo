@@ -1,0 +1,8 @@
+#filmList>.main{position: absolute;top: 0px;left: 0;bottom: 0;width: 100%;overflow:hidden;background: #f9f9f9;}
+#filmList>.main>.wrap{padding: 0 15px;}
+
+/*******头部导航*******/
+#filmList .nave{height: 45px;border-bottom: 1px solid #fe6e00;display: flex;}
+#filmList .nave a{font-size: 16px;color: #6a6a6a;text-align: center;line-height: 45px;flex: 1;}
+#filmList .nave a.active{color: #fe6e00;position: relative;}
+#filmList .nave a.active:before{content: '';position: absolute;width: 100%;bottom: 0;height: 3px;border-bottom: 3px solid #fe6e00;left: 0;}

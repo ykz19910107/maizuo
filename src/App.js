@@ -12,13 +12,15 @@ import SilderBar from './views/common/SilderBar.js'
 import './css/style.css'
 
 
-import Home from './pages/Home.js'
+import Home from './pages/home/Home.js'
 import Movies from './pages/Movies.js'
 import Cinema from './pages/Cinema.js'
 import Shop from './pages/Shop.js'
 import Me from './pages/Me.js'
 import Card from './pages/Card.js'
 import City from './pages/City.js'
+import FilmDetails from './pages/home/FilmDetails.js'
+import FilmList from './pages/home/FilmList.js'
 
 export default class App extends Component{
 	constructor() {
@@ -49,6 +51,8 @@ export default class App extends Component{
 					<Route path="/me" component={Me}/>
 					<Route path="/card" component={Card}/>
 					<Route path="/city-list" component={City}/>
+					<Route path="/film-details/:id" component={FilmDetails}/>
+					<Route path="/film-list/:category" component={FilmList}/>
 				</div>
 			</BrowserRouter>
 		)
