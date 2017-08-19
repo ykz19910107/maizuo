@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+/*reseter*/
+html,body{width: 100%;height: 100%;}
+h1,h2,h3,h4,h5,h6,div,ol,ul,li,dl,dt,dd,body,html,form,fieldset,img,legend,p,b{ margin:0; padding:0}
+h1,h2,h3,h4,h5,h6,strong,b{ font-weight:100;}
+fieldset,img{ border:none;}
+img{display: block;}
+ul,ol{ list-style:none;}
+body{ font-size:14px; font-family:"微软雅黑","宋体",Arial; background:#fff;}
+a{text-decoration:none;color:#000;}
+a:hover{ color:#008cd6;;}
+input,button{ outline:none;}
+.clear:after{content:".";clear:both;display:block;height:0;overflow:hidden;}
+i,em{ font-style:normal;}
+.gong{margin: 0 auto;width:100%;height: 100%;}
+
+/*iconfont*/
+@font-face {font-family: "iconfont";
+  src: url('./font/iconfont.ttf?t=1493881816311') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+ 
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;}
+  
+
+
+
+/********************边框*******************/
+.top-1px{position: relative;}
+.top-1px:after{content: '';position: absolute;top: -1px;width: 100%;height: 1px;border-top: 1px solid #333; transform: scaleY(0.5);left: 0;}
+
+.bottom-1px{position: relative;}
+.bottom-1px:before{content: '';position: absolute;bottom: -1px;width: 100%;height: 1px;border-bottom: 1px solid #333; transform: scaleY(0.5);left: 0;}
