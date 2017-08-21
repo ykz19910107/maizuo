@@ -1,7 +1,7 @@
 export default {
 	homeSilderBarData: [
 		{title: '首页', header: '卖座电影', path: '/'},
-		{title: '影片', header: '卖座电影', path: '/movies'},
+		{title: '影片', header: '卖座电影', path: '/film-list/now-playing'},
 		{title: '影院', header: '全部影院', path: '/cinema'},
 		{title: '商城', header: '卖座商城', path: '/shop'},
 		{title: '我的', header: '登录', path: '/me'},

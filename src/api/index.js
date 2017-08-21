@@ -10,13 +10,20 @@ const comingSoon = '/v4/api/film/coming-soon'
 //请求电影详情数据
 const filmDetailsData = '/v4/api/film'
 
-//请求正在热映影片列表数据
+/////////////////////////////////////////////////////
+
+//影院数据请求
+const cinemaData = '/v4/api/cinema'
+
+
+
 
 export default {
 	homeBannerApi,
 	nowPlaying,
 	comingSoon,
-	filmDetailsData
+	filmDetailsData,
+	cinemaData
 }
 
 

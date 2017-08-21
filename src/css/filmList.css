@@ -6,3 +6,27 @@
 #filmList .nave a{font-size: 16px;color: #6a6a6a;text-align: center;line-height: 45px;flex: 1;}
 #filmList .nave a.active{color: #fe6e00;position: relative;}
 #filmList .nave a.active:before{content: '';position: absolute;width: 100%;bottom: 0;height: 3px;border-bottom: 3px solid #fe6e00;left: 0;}
+
+
+/**********列表内容**********/
+#filmList .list li a{display: flex;padding: 20px 0;border-bottom: 1px dashed #c9c9c9;overflow: hidden;}
+#filmList .list li:nth-last-of-type(1) a{border-bottom:0;}
+#filmList .list li a img{width:60px;height:83px;}
+
+#filmList .list li a div{padding-left: 15px;flex: 1;}
+#filmList .list li a div h3{color: #000;font-size: 16px;line-height: 32px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+#filmList .list li a div h3 span{color: #fc7103;float: right;}
+#filmList .list li a div h3 span .icon-menu:before{content: '\e619';color: #c6c6c6;}
+
+#filmList .list li a div p{line-height: 24px;color: #8e8e8e;font-size: 12px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+#filmList .list li a div p span{color: #8aa2bf;}
+
+#filmList>.icon-bottom{display: block;width: 48px;height: 48px;background: rgba(0,0,0,0.7);border-radius: 50%;position: absolute;bottom: 10px;right: 10px;text-align: center;line-height: 48px;transition: 0.5s;transform: translateY(58px);}
+#filmList>.icon-bottom:before{content: '\e603';color: #fff;font-size: 24px;}
+
+
+
+
+
+
+

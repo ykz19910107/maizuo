@@ -90,44 +90,20 @@ function getfilmDetailsData(id){
 }
 
 
-//请求正在热映电影列表数据
+//请求正在热映电影或即将上映电影列表数据
 
-function getHotshowing(page){
+function getFilmList(mold,page){
 	return new Promise((resolve,reject)=>{
-		axios.get(`${API.nowPlaying}?page=${page}&count=7`)
+		axios.get(`${API.filmDetailsData}/${mold}?page=${page}&count=7`)
 		.then((res)=>{
 			var newArr=res.data.data.films.map((item)=>{
 				var obj = {}
 				obj.name = item.name
 				obj.id = item.id
 				obj.cinemaCount = item.cinemaCount//上映影院数
-				obj.grade = item.grade//评分
+				obj.grade = mold == "coming-soon" ? null : item.grade //评分
 				obj.watchCount = item.watchCount//购票人数
-				obj.path = item.cover.origin//图片路径
-				obj.intro = item.intro//评价
-				return obj
-			})
-			resolve(newArr)
-		})
-		.catch((error)=>{
-			console.log(error)
-		})
-	})
-}
-
-//请求即将上映电影数据
-function getAboutto(page){
-	return new Promise((resolve,reject)=>{
-		axios.get(`${API.comingSoon}?page=${page}&count=7`)
-		.then((res)=>{
-			var newArr=res.data.data.films.map((item)=>{
-				var obj = {}
-				obj.name = item.name
-				obj.id = item.id
-				obj.cinemaCount = item.cinemaCount+"家影院上映"//上映影院数
-				obj.grade = item.grade//评分
-				obj.watchCount = item.watchCount+"人购票"//购票人数
-				obj.path = item.cover.origin//图片路径
+				obj.path = item.poster.thumbnail//图片路径
 				obj.intro = item.intro//评价
 				return obj
 			})
@@ -145,6 +121,5 @@ export default {
 	nowPlaying,
 	getComingSoon,
 	getfilmDetailsData,
-	getHotshowing,
-	getAboutto
+	getFilmList
 }

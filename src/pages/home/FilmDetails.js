@@ -1,7 +1,28 @@
 import React, {Component} from 'react'
 import homeService from '../../services/homeService.js'
 import'../../css/filmDetails.css'
-
+//var detectBack = {
+//
+//  initialize: function() {
+//      //监听hashchange事件
+//      window.addEventListener('hashchange', function() {
+//
+//          //为当前导航页附加一个tag
+//          this.history.replaceState('hasHash', '', '');
+//
+//      }, false);
+//
+//      window.addEventListener('popstate', function(e) {
+//
+//          if (e.state) {
+//              //侦测是用户触发的后退操作, dosomething
+//              //这里刷新当前url
+//              this.location.reload();
+//          }
+//      }, false);
+//  }
+//}
+//detectBack.initialize(); 
 
 export default class FilmDetails extends Component{
 	constructor({location}) {
