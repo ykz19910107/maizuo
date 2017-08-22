@@ -20,6 +20,8 @@
 
 #filmList .list li a div p{line-height: 24px;color: #8e8e8e;font-size: 12px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
 #filmList .list li a div p span{color: #8aa2bf;}
+#filmList .list li a div p span:nth-of-type(2){margin-left: 15px;}
+#filmList .list li a div .date span{color:#ffb375;}
 
 #filmList>.icon-bottom{display: block;width: 48px;height: 48px;background: rgba(0,0,0,0.7);border-radius: 50%;position: absolute;bottom: 10px;right: 10px;text-align: center;line-height: 48px;transition: 0.5s;transform: translateY(58px);}
 #filmList>.icon-bottom:before{content: '\e603';color: #fff;font-size: 24px;}

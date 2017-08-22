@@ -19,7 +19,8 @@ export default class ListContent extends Component{
 										<span>{item.grade}<i class="iconfont icon-menu"></i></span>
 									</h3>
 									<p>{item.intro}</p>
-									<p><span>{item.cinemaCount}</span>家影院上映<span>{item.watchCount}</span>人购票</p>
+									{this.props.pathname=="now-playing" ?<p><span>{item.cinemaCount}</span>家影院上映<span>{item.watchCount}</span>人购票</p>
+									:<p class="date"><span>{item.day}</span><span>{item.week}</span></p>}
 								</div>
 							</Link>
 						</li>

@@ -39,9 +39,41 @@ function getCinemaData(){
 	})
 }
 
+//影院详情数据请求
+function getCinemaDetails(id){
+	return new Promise((resolve,reject)=>{
+		axios.get(`${API.cinemaData}/${id}?_t=${new Date().getTime()}`)
+		.then((res)=>{
+			var arr=[{"取票":null},{"3D":null},{"停车":null},{"优惠":null},{"交通":null}]
+			arr.map((item)=>{
+				for(var key in item){
+					res.data.data.cinema.services.map((n)=>{
+						if(key==n.name){
+							item[key]=n
+						}
+					})
+				}
+			})
+			var obj = {}
+			obj.id = res.data.data.cinema.id
+			obj.name = res.data.data.cinema.name
+			obj.address = res.data.data.cinema.address//地址
+			obj.telephones = res.data.data.cinema.telephones//电话
+			obj.services = arr//取票、3D、停车、优惠、交通
+			resolve(obj)
+		})
+		.catch((error)=>{
+			console.log(error)
+		})
+	})
+}
+
+
+
 
 export default {
-	getCinemaData
+	getCinemaData,
+	getCinemaDetails
 }
 
 

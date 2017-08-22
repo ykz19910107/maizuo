@@ -5,7 +5,7 @@ export default class Shop extends Component{
 	
 	render(){
 		return (
-			<div class="page">
+			<div class="page" id="shop">
 				商城
 			</div>
 		)

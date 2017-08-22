@@ -15,6 +15,10 @@ const filmDetailsData = '/v4/api/film'
 //影院数据请求
 const cinemaData = '/v4/api/cinema'
 
+////////////////////////////////////////////////////
+
+//商城数据请求
+const shopList = '/api/ad/list'
 
 
 
@@ -23,7 +27,8 @@ export default {
 	nowPlaying,
 	comingSoon,
 	filmDetailsData,
-	cinemaData
+	cinemaData,
+	shopList
 }
 
 

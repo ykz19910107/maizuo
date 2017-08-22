@@ -1,13 +1,13 @@
 @charset "utf-8";
 
 /*reseter*/
-html,body{width: 100%;height: 100%;}
+html,body{width: 100%;height: 100%;background: rgb(235,235,235);}
 h1,h2,h3,h4,h5,h6,div,ol,ul,li,dl,dt,dd,body,html,form,fieldset,img,legend,p,b{ margin:0; padding:0}
 h1,h2,h3,h4,h5,h6,strong,b{ font-weight:100;}
 fieldset,img{ border:none;}
 img{display: block;}
 ul,ol{ list-style:none;}
-body{ font-size:14px; font-family:"微软雅黑","宋体",Arial; background:#fff;}
+body{ font-size:14px; font-family:"微软雅黑","宋体",Arial; }
 a{text-decoration:none;color:#000;}
 a:hover{ color:#008cd6;;}
 input,button{ outline:none;}

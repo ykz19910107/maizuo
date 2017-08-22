@@ -93,10 +93,15 @@ function getfilmDetailsData(id){
 //请求正在热映电影或即将上映电影列表数据
 
 function getFilmList(mold,page){
+	var week = ["星期天","星期一","星期二","星期三","星期四","星期五","星期六"]
 	return new Promise((resolve,reject)=>{
 		axios.get(`${API.filmDetailsData}/${mold}?page=${page}&count=7`)
 		.then((res)=>{
 			var newArr=res.data.data.films.map((item)=>{
+				
+				var day = new Date(item.premiereAt)
+				var newday = day.getMonth()+1+"月"+day.getDate()+"日上映"
+				var nowWeek = week[day.getDay()]
 				var obj = {}
 				obj.name = item.name
 				obj.id = item.id
@@ -105,6 +110,8 @@ function getFilmList(mold,page){
 				obj.watchCount = item.watchCount//购票人数
 				obj.path = item.poster.thumbnail//图片路径
 				obj.intro = item.intro//评价
+				obj.day = newday//上映日期
+				obj.week = nowWeek//星期几
 				return obj
 			})
 			resolve(newArr)

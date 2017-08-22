@@ -32,7 +32,7 @@ export default class FilmList extends Component{
 							<a class={active2} onClick={this.changeAction.bind(this,2)}>即将上映</a>
 						</nav>
 						{/****列表***/}
-						<ListContent data={this.state.list} />
+						<ListContent data={this.state.list} pathname={this.state.getData} />
 					</div>
 				</div>
 				<i class="iconfont icon-bottom" ref='icon' onClick={this.scrollTop.bind(this)}></i>
@@ -61,7 +61,7 @@ export default class FilmList extends Component{
 		this.setState({listscroll:this.state.listscroll})
 		
 		this.state.listscroll.on("scroll",()=>{
-			if(this.state.listscroll.y<=(-295-896*num) && this.state.listscroll.y>=(-419-896*num)){
+			if(this.state.listscroll.y<=(-275-896*num) && this.state.listscroll.y>=(-419-896*num)){
 				num += 1
 				page += 1
 				homeService.getFilmList(this.state.getData,page)

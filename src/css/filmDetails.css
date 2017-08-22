@@ -1,4 +1,4 @@
-#filmdetails>.main>.wrap>img{width: 100%;height: 180px;}
+#filmdetails>.main>.wrap>img{width: 100%;}
 #filmdetails>.main>.wrap{min-height: 594px;}
 #filmdetails>.main{position: absolute;top: 0px;left: 0;bottom: 0;width: 100%;overflow:hidden;}
 
