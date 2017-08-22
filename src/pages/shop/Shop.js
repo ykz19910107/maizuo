@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import shopService from '../../services/shopService.js'
 
 export default class Shop extends Component{
 	
@@ -11,4 +11,10 @@ export default class Shop extends Component{
 		)
 	}
 	
+	componentWillMount(){
+		shopService.getShoplist()
+		.then((res)=>{
+			console.log(res)
+		})
+	}
 }
