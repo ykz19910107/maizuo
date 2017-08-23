@@ -6,6 +6,7 @@ import NowPlaying from '../../components/home/NowPlaying.js'
 import ComingSoon from '../../components/home/ComingSoon.js'
 
 let mySwiper=null
+let timer;
 
 export default class Home extends Component{
 	constructor() {
@@ -98,7 +99,11 @@ export default class Home extends Component{
 	
 	componentDidUpdate(){
 		//刷新滚动视图
-		this.state.homeScroll.refresh()
+		clearTimeout(timer)
+		timer = setTimeout(()=>{
+			this.state.homeScroll.refresh()
+		},100)
+		
 	}
 	
 	//滚动到顶部
