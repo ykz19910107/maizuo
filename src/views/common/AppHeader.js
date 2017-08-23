@@ -5,9 +5,9 @@ import {Link} from 'react-router-dom'
 export default class AppHeader extends Component{
 	render(){
 		return(
-			<header id="header" onClick={this.showAction.bind(this)}>
+			<header id="header">
 				<i class="iconfont icon-meun" onClick={this.showAction.bind(this)}></i>
-				<p class="title">{this.props.title}</p>
+				<p class="title" onClick={this.showAction.bind(this)}>{this.props.title}</p>
 				<div class='header-right'>
 					<Link to="/city-list">
 						<span onClick={this.changeAction.bind(this,"选择城市")}>深圳</span>
@@ -24,7 +24,7 @@ export default class AppHeader extends Component{
 		this.props.show()
 	}
 	//更改头部信息
-	changeAction(val){
+	changeAction(val,e){
 		this.props.change(val)
 	}
 }

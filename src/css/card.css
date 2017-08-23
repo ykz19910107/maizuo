@@ -1,0 +1,20 @@
+#card{background: #fcfcfc;}
+
+/*******头部导航*******/
+#card .nave{height: 45px;border-bottom: 1px solid #fe6e00;display: flex;}
+#card .nave a{font-size: 16px;color: #6a6a6a;text-align: center;line-height: 45px;flex: 1;}
+#card .nave a.active{color: #fe6e00;position: relative;}
+#card .nave a.active:before{content: '';position: absolute;width: 100%;bottom: 0;height: 3px;border-bottom: 3px solid #fe6e00;left: 0;}
+
+/*********账号密码输入************/
+#card form{padding: 0 32px;}
+#card form>div>div{margin-top: 34px;padding-bottom: 5px;}
+#card form>div>div span{margin: 0 15px 0 10px;}
+#card form>div>div input{border: 0;}
+
+#card form .username,#card form .pwd{position: relative;}
+#card form .username:before,#card form .pwd:before{content: '';position: absolute;width: 100%;bottom: 0;height: 5px;border: 1px solid #c4c4c4;border-top: 0;}
+
+
+
+#card form button{display: block;background: #fe8233;width: 139px;height: 22px;padding: 8px 12px;font-size: 16px;color: #fff;text-align: center;line-height: 22px;border-radius: 38px;margin:0 auto;margin-top: 45px;border: 0;box-sizing: initial;}

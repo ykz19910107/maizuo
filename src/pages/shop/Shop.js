@@ -1,24 +1,27 @@
 import React, {Component} from 'react'
 import shopService from '../../services/shopService.js'
 import ContentList from '../../components/shop/ContentList.js'
-
+import GoodChoiceList from '../../components/shop/GoodChoiceList.js'
 
 import'../../css/shop.css'
 
 let mySwiper=null
 let timer
+var num=0
+
 
 export default class Shop extends Component{
 	constructor() {
 	    super()
 	    this.state={
-	    	shopData:[]
+	    	shopData:[],
+	    	page:1,
+	    	goodChoiceData:[]
 	    }
 	}
 	
 	render(){
 		var data = this.state.shopData
-		console.log(data)
 		return (
 			<div id="shop">
 				<div class="main">
@@ -65,6 +68,9 @@ export default class Shop extends Component{
 						{/*商品列表内容*/}
 						{data.length !=0 ?<ContentList data={data[3][5]} />:null}
 						{/*好货精选*/}
+						{this.state.goodChoiceData.length !=0 ?
+							<GoodChoiceList data={this.state.goodChoiceData} />
+						:null}
 					</div>
 				</div>
 			</div>
@@ -72,6 +78,7 @@ export default class Shop extends Component{
 	}
 	
 	componentWillMount(){
+		//商城首页列表数据请求
 		shopService.getShoplist()
 		.then((res)=>{
 			this.setState({shopData:res})
@@ -83,32 +90,34 @@ export default class Shop extends Component{
 				pagination: '.swiper-pagination',
         		paginationClickable: true
 			})
-			
-			
+		})
+		
+		//商城首页好货精选数据请求
+		shopService.getgoodChoice(this.state.page)
+		.then((res)=>{
+			this.setState({goodChoiceData:res})
 		})
 	}
 	
 	
 	componentDidMount(){
-		//创建滚动视图
-		
-//		this.state.shopScroll = new IScroll('#shop .main',{
-//			probeType: 3,
-//			momentum:false,
-//			bounce:false
-//		})
-//		this.setState({shopScroll:this.state.shopScroll})
-	
-		
+		//监听页面滚动
+		var that = this
+		window.addEventListener('scroll', function(){
+			if(window.scrollY>=(3410+2160*num) && window.scrollY<=(3838+2160*num)){
+				num += 1
+				that.state.page += 1
+				shopService.getgoodChoice(that.state.page)
+				.then((res)=>{
+					res.map((item)=>{that.state.goodChoiceData.push(item)})
+					that.setState({goodChoiceData:that.state.goodChoiceData})
+				})
+			};
+		 })
 	}
 	
 	
 	componentDidUpdate(){
-		//刷新滚动视图
-//		clearTimeout(timer)
-//		timer = setTimeout(()=>{
-//			this.state.shopScroll.refresh()
-//		},100)
-//		
+		
 	}
 }

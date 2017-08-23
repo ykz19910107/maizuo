@@ -20,6 +20,12 @@ const cinemaData = '/v4/api/cinema'
 //商城数据请求
 const shopList = '/api/ad/list'
 
+//商城好货精选数据请求
+const goodChoice = '/api/recommend/home?num=20'
+
+//////////////////////////////////////////////////////
+//城市数据请求
+const CityData='/v4/api/city'
 
 
 export default {
@@ -28,7 +34,9 @@ export default {
 	comingSoon,
 	filmDetailsData,
 	cinemaData,
-	shopList
+	shopList,
+	goodChoice,
+	CityData
 }
 
 

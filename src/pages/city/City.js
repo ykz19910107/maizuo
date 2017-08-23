@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import cityService from '../../services/cityService.js'
 
 export default class City extends Component{
 	
@@ -12,5 +13,13 @@ export default class City extends Component{
 	
 	}
 	
+	componentWillMount(){
+		//城市数据请求
+		cityService.getCityData()
+		.then((res)=>{
+			
+		})
+		
+	}
 	
 }
