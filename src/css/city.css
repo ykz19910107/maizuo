@@ -1,0 +1,7 @@
+#city{background: rgb(235, 235, 235)}
+#city>div{margin-top: 45px;}
+#city  p{background: #ebebeb;line-height: 40px;padding-left: 15px;font-size: 14px}
+#city  ul{background:#fff;display: flex;height: 47px; line-height: 47px;flex-wrap: wrap;width: 100%;height: auto;}
+#city  ul li{width: 25%;color: #e2941a;text-align:center;font-size: 16px;border-bottom: 1px solid #ebebeb;background: #fff;}
+#city  ul li a{display:block;color: #838383;}
+

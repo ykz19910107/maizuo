@@ -18,11 +18,21 @@ let reducer = function(state, action){
 	if(state == null){
 		state = {
 			title: '卖座电影',
+			city:'深圳',
+			shoptitle:''
 		};
 	}
 	
 	if(action.type === 'changename'){
 		state.title = action.val;
+	}
+	
+	if(action.type === 'changecity'){
+		state.city = action.val;
+	}
+
+	if(action.type === 'changeShopTitle'){
+		state.shoptitle = action.val;
 	}
 	return state;
 }

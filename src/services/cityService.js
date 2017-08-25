@@ -19,7 +19,7 @@ function getCityData(){
 				})
 				newArr.push(obj)
 			})
-			console.log(newArr)
+			resolve(newArr)
 		})
 		.catch((error)=>{
 			console.log(error)

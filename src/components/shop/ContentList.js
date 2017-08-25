@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 export default class ContentList extends Component{
 	render(){
@@ -14,11 +15,11 @@ export default class ContentList extends Component{
 								<dd>
 									{item.products.map((list,i)=>{
 										return(
-											<a key={i}>
+											<Link key={i} to={'/shop-details/'+list.id}>
 												<img src={list.image} />
 												<p>{list.name}</p>
 												<span>￥{list.price/100+'.00'}</span>
-											</a>
+											</Link>
 										)
 									})}
 									<a>

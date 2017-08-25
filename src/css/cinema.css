@@ -1,29 +1,28 @@
 /*************影院首页内容样式*****************/
 #cinema>.main{background: rgb(235,235,235);position: relative;top:45px;}
-#cinema>.main>.wrap .title-list dl{background: #fff;}
-#cinema>.main>.wrap .title-list dl dt{background: #e1e1e1;color: #636363;height: 40px;line-height: 40px;padding-left: 16px;margin-bottom: 1px;font-size: 14px;}
-#cinema>.main>.wrap .title-list dl:nth-last-of-type(1) dt{margin-bottom: 0;}
+#cinema>.main>.wrap .title-list ul{background: #fff;}
+#cinema>.main .wrap .title-list ul h2{background: #e1e1e1;color: #636363;height: 40px;line-height: 40px;padding-left: 16px;border-bottom: 1px solid #fff;font-size: 14px;}
 
-#cinema>.main>.wrap .title-list dl dd{padding: 10px 0 12px 16px;border-bottom: 1px solid rgb(225,225,225);}
-#cinema>.main>.wrap .title-list dl dd a{display: block;}
-#cinema>.main>.wrap .title-list dl dd h3{height: 30px;line-height: 30px;margin-bottom: 5px;}
-#cinema>.main>.wrap .title-list dl dd h3 span{display: block;color: #333;width: 180px;overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;font-size: 16px;margin-right: 3px;float: left;}
-#cinema>.main>.wrap .title-list dl dd h3 em{display: block;width: 20px;height: 20px;font-size: 12px;text-align: center;line-height: 18px;border: 1px solid #fc8558;color: #fc8558;margin-right: 3px;border-radius: 50%;float: left;box-sizing: border-box;margin-top: 5px;transform: scale(0.8);}
-#cinema>.main>.wrap .title-list dl dd h3 em:nth-of-type(2){color: #88aec8;border-color: #88aec8;}
-#cinema>.main>.wrap .title-list dl dd h3 .icon-menu{float: right;}
-#cinema>.main>.wrap .title-list dl dd h3 .icon-menu:before{content: '\e619';color: #c6c6c6;}
+#cinema>.main>.wrap .title-list ul li{padding: 10px 0 12px 16px;border-bottom: 1px solid rgb(225,225,225);}
+#cinema>.main>.wrap .title-list ul li a{display: block;}
+#cinema>.main>.wrap .title-list ul li h3{height: 30px;line-height: 30px;margin-bottom: 5px;}
+#cinema>.main>.wrap .title-list ul li h3 span{display: block;color: #333;width: 180px;overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;font-size: 16px;margin-right: 3px;float: left;}
+#cinema>.main>.wrap .title-list ul li h3 em{display: block;width: 20px;height: 20px;font-size: 12px;text-align: center;line-height: 18px;border: 1px solid #fc8558;color: #fc8558;margin-right: 3px;border-radius: 50%;float: left;box-sizing: border-box;margin-top: 5px;transform: scale(0.8);}
+#cinema>.main>.wrap .title-list ul li h3 em:nth-of-type(2){color: #88aec8;border-color: #88aec8;}
+#cinema>.main>.wrap .title-list ul li h3 .icon-menu{float: right;}
+#cinema>.main>.wrap .title-list ul li h3 .icon-menu:before{content: '\e619';color: #c6c6c6;}
 
-#cinema>.main>.wrap .title-list dl dd strong{margin: 0 5px;padding: 0 5px;line-height: 15px;color: #fff;background: #51add0;border-radius: 3px;font-size: 12px;}
+#cinema>.main>.wrap .title-list ul li strong{margin: 0 5px;padding: 0 5px;line-height: 15px;color: #fff;background: #51add0;border-radius: 3px;font-size: 12px;}
 
-#cinema>.main>.wrap .title-list dl dd p:nth-of-type(1){margin-top: 5px;}
-#cinema>.main>.wrap .title-list dl dd p{line-height: 20px;font-size: 12px;width: 230px;overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;color: #ccc;}
+#cinema>.main>.wrap .title-list ul li p:nth-of-type(1){margin-top: 5px;}
+#cinema>.main>.wrap .title-list ul li p{line-height: 20px;font-size: 12px;width: 230px;overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;color: #ccc;}
 
 #cinema>.icon-bottom{display: block;width: 48px;height: 48px;background: rgba(0,0,0,0.7);border-radius: 50%;position: fixed;bottom: 10px;right: 10px;text-align: center;line-height: 48px;transition: 0.5s;transform: translateY(58px);}
 #cinema>.icon-bottom:before{content: '\e603';color: #fff;font-size: 24px;}
 
 
 /********************影院详情页样式*******************/
-#cinemadetails{margin-top: 45px;background:rgb(235,235,235);}
+#cinemadetails{margin-top: 45px;background:rgb(235,235,235); overflow: hidden;}
 #cinemadetails>div>img{width: 100%;}
 #cinemadetails>div>ul{overflow: hidden;background: #fff;}
 #cinemadetails>div>ul>li{padding: 25px 17px 0;position: relative;}

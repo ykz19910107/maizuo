@@ -14,16 +14,30 @@ import store from './store'
 //引入css样式
 import './css/style.css'
 
-
+//home页首页和子页面
 import Home from './pages/home/Home.js'
-import Cinema from './pages/cinema/Cinema.js'
-import CinemaDetails from './pages/cinema/CinemaDetails.js'
-import Shop from './pages/shop/Shop.js'
-import Me from './pages/Me.js'
-import Card from './pages/Card.js'
-import City from './pages/city/City.js'
 import FilmDetails from './pages/home/FilmDetails.js'
 import FilmList from './pages/home/FilmList.js'
+
+//影院首页和子页面
+import Cinema from './pages/cinema/Cinema.js'
+import CinemaDetails from './pages/cinema/CinemaDetails.js'
+
+//商城首页和子页面
+import Shop from './pages/shop/Shop.js'
+import ShopNaveDetails from './pages/shop/ShopNaveDetails.js'
+import ShopDetails from './pages/shop/ShopDetails.js'
+
+//登录页面
+import Me from './pages/Me.js'
+
+//卖座卡页面
+import Card from './pages/Card.js'
+
+//城市搜索页面
+import City from './pages/city/City.js'
+
+
 
 
 let unsubscribe;
@@ -35,7 +49,8 @@ export default class App extends Component{
 	    super()
 	    this.state={
 	    	show:false,
-	    	hearderTitle:store.getState().title
+			hearderTitle:store.getState().title
+			
 	    }
 	}
 	
@@ -43,7 +58,7 @@ export default class App extends Component{
 		return(
 			<BrowserRouter>
 				<div>
-					<AppHeader show={this.menuHandle.bind(this)} title={this.state.hearderTitle} change={this.changTitle.bind(this)}/>
+					<AppHeader show={this.menuHandle.bind(this)} title={this.state.hearderTitle} change={this.changTitle.bind(this)} city={store.getState().city}/>
 					<Route path="/" render={({history,location})=>{
 						return <SilderBar history={history} 
 										  ishow={this.state.show} 
@@ -53,14 +68,23 @@ export default class App extends Component{
 					
 					
 					<Route path="/" exact component={Home}/>
-					<Route path="/cinema" component={Cinema}/>
-					<Route path="/shop" component={Shop}/>
-					<Route path="/me" component={Me}/>
-					<Route path="/card" component={Card}/>
-					<Route path="/city-list" component={City}/>
 					<Route path="/film-details/:id" component={FilmDetails}/>
 					<Route path="/film-list/:category" component={FilmList}/>
+
+					<Route path="/cinema" component={Cinema}/>
 					<Route path="/cinema-details/:id" component={CinemaDetails}/>
+
+					<Route path="/shop" component={Shop}/>
+					<Route path='/shop-navedetails/:class?:id' component={ShopNaveDetails} />
+					<Route path='/shop-details/:id' component={ShopDetails} />
+
+					<Route path="/me" component={Me}/>
+
+					<Route path="/card" component={Card}/>
+
+					<Route path="/city-list" component={City}/>
+					
+					
 				</div>
 			</BrowserRouter>
 		)

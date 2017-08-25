@@ -9,6 +9,7 @@ import '../../css/cinema.css'
 
 
 var timer;
+var scrolly
 
 export default class Cinema extends Component{
 	constructor() {
@@ -24,17 +25,17 @@ export default class Cinema extends Component{
 	render(){
 		let nowPutDown = this.state.putDown
 		return (
-			<div id="cinema" ref="scroll">
+			<div id="cinema">
 				<div class="main">
 					<div class="wrap">
 						<div class="title-list">
 							{this.state.title.map((item,index)=>{
 								for(var j in item){
 									return(
-										<dl key={index}>
-											<dt onClick={this.changeAction.bind(this,index)}>{j}</dt>
+										<ul key={index}>
+											<h2 onClick={this.changeAction.bind(this,index)}>{j}</h2>
 											{nowPutDown[index].judge && this.state.ishow == index ? item[j].map((content,i)=>{
-												return(<dd key={i}>
+												return(<li key={i}>
 															<Link to={'/cinema-details/'+content.id} onClick={this.changeTitle.bind(this,content.name)}>
 																<h3>
 																	<span>{content.name}</span>
@@ -46,16 +47,16 @@ export default class Cinema extends Component{
 																<p>{content.address}</p>
 																<p>{content.distance}</p>
 															</Link>
-														</dd>)
+														</li>)
 											}) : null}
-										</dl>
+										</ul>
 									)
 								}
 							})}
 						</div>
 					</div>
 				</div>
-				<i class="iconfont icon-bottom" ref='icon' onClick={this.scrollTop.bind(this)}></i>
+				<i class="iconfont icon-bottom" id='icon' onClick={this.scrollTop.bind(this)}></i>
 			</div>
 		)
 	}
@@ -76,35 +77,13 @@ export default class Cinema extends Component{
 	
 	componentDidMount(){
 		var that = this
-		window.addEventListener('scroll', function(){
-		 
-		 	if(window.scrollY>=180){
-				that.refs.icon.style.transform="translateY(0px)"
-			}else{
-				that.refs.icon.style.transform="translateY(58px)"
-			}
-		 })
-		//创建滚动视图
-//		this.state.contentcroll = new IScroll('#cinema .main',{
-//			probeType: 3,
-//			momentum:false,
-//			bounce:false
-//		})
-//		this.setState({contentcroll:this.state.contentcroll})
-//		this.state.contentcroll.on('scroll',()=>{
-//			if(this.state.contentcroll.y<=-180){
-//				this.refs.icon.style.transform="translateY(0px)"
-//			}else{
-//				this.refs.icon.style.transform="translateY(58px)"
-//			}
-//		})
+		window.addEventListener('scroll', that.mainscroll)
 	}
 	
-	componentDidUpdate(){
-		//刷新滚动视图
-//		this.state.contentcroll.refresh()
-		
-	}
+	 componentWillUnmount() {
+		var that = this
+    	window.removeEventListener('scroll', that.mainscroll);
+ 	 }
 	
 	//点击收起
 	changeAction(index){
@@ -134,5 +113,13 @@ export default class Cinema extends Component{
 			//参数
 			val: title
 		});
+	}
+
+	mainscroll(){
+		if(window.scrollY>=180){
+			document.getElementById('icon').style.transform="translateY(0px)"
+		}else{
+			document.getElementById('icon').style.transform="translateY(58px)"
+		}
 	}
 }

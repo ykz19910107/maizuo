@@ -69,7 +69,7 @@ export default class CinemaDetails extends Component{
 		)
 	}
 	componentWillMount(){
-		
+		window.scrollTo(0,0)
 		CinemaService.getCinemaDetails(this.state.id)
 		.then((res)=>{
 			this.setState({data:res})

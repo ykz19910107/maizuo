@@ -23,6 +23,14 @@ const shopList = '/api/ad/list'
 //商城好货精选数据请求
 const goodChoice = '/api/recommend/home?num=20'
 
+//商品导航详情页数据请求
+const naveActive = '/api'
+
+//商品详情页数据请求
+const shopDetailsTitle = '/api/item/desc'//头部请求
+
+const shopDetails = '/api/item'
+
 //////////////////////////////////////////////////////
 //城市数据请求
 const CityData='/v4/api/city'
@@ -36,7 +44,10 @@ export default {
 	cinemaData,
 	shopList,
 	goodChoice,
-	CityData
+	CityData,
+	naveActive,
+	shopDetailsTitle,
+	shopDetails
 }
 
 

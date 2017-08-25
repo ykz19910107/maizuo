@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import {Link} from 'react-router-dom'
 
 export default class GoodChoice extends Component{
 	render(){
@@ -10,16 +10,18 @@ export default class GoodChoice extends Component{
 					{this.props.data.map((item,index)=>{
 						return(
 							<dl key={index}>
-								<dt>
-									<img src={item.img} />
-								</dt>
-								<dd>
-									<p>{item.masterName}</p>
-								</dd>
-								<dd>
-									<span>{item.price}</span>
-									<i>{item.displaySalesCount}</i>
-								</dd>
+								<Link to={'/shop-details/'+item.id}>
+									<dt>
+										<img src={item.img} />
+									</dt>
+									<dd>
+										<p>{item.masterName}</p>
+									</dd>
+									<dd>
+										<span>{item.price}</span>
+										<i>{item.displaySalesCount}</i>
+									</dd>
+								</Link>
 							</dl>
 						)
 					})}

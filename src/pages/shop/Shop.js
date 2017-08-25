@@ -3,6 +3,9 @@ import shopService from '../../services/shopService.js'
 import ContentList from '../../components/shop/ContentList.js'
 import GoodChoiceList from '../../components/shop/GoodChoiceList.js'
 
+import {Link} from 'react-router-dom'
+import store from '../../store'
+
 import'../../css/shop.css'
 
 let mySwiper=null
@@ -40,12 +43,13 @@ export default class Shop extends Component{
 						{data.length !=0 ?
 							<ul class="nave">
 								{data[0][1].map((item,index)=>{
+									var arr = item.url.split('/')
 									return(
 										<li key={index}>
-											<a>
+											<Link to={'/shop-navedetails/'+arr[4]+'?id='+arr[5]} onClick={this.change.bind(this,item.name)}>
 												<img src={item.imageSrc} />
 												<span>{item.name}</span>
-											</a>
+											</Link>
 										</li>
 									)
 								})}
@@ -65,12 +69,27 @@ export default class Shop extends Component{
 								})}
 							</ul>
 						:null}
+						{/*有品专区*/}
+						{data.length !=0 && data[3][4] !=0 ?
+							<div class='prefecture'>
+								<h3>－ 有品专区 －</h3>
+								{data[3][4].map((item,index)=>{
+									return <img src={item.imageSrc} key={index} />
+								})}
+							</div>
+						:null}
 						{/*商品列表内容*/}
-						{data.length !=0 ?<ContentList data={data[3][5]} />:null}
+						{data.length !=0 ?<ContentList data={data[4][5]} />:null}
 						{/*好货精选*/}
 						{this.state.goodChoiceData.length !=0 ?
 							<GoodChoiceList data={this.state.goodChoiceData} />
-						:null}
+						:
+							<div class="none">
+								<h3>－ 好货精选 －</h3>
+								<p>暂无数据</p>
+								<p>~貌似没有更多了~</p>
+							</div>
+						}
 					</div>
 				</div>
 			</div>
@@ -117,7 +136,10 @@ export default class Shop extends Component{
 	}
 	
 	
-	componentDidUpdate(){
-		
+	change(name){
+		store.dispatch({
+			type:'changeShopTitle',
+			val:name
+		})
 	}
 }

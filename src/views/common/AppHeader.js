@@ -9,8 +9,8 @@ export default class AppHeader extends Component{
 				<i class="iconfont icon-meun" onClick={this.showAction.bind(this)}></i>
 				<p class="title" onClick={this.showAction.bind(this)}>{this.props.title}</p>
 				<div class='header-right'>
-					<Link to="/city-list">
-						<span onClick={this.changeAction.bind(this,"选择城市")}>深圳</span>
+					<Link to="/city-list" onClick={this.changeAction.bind(this,"选择城市")}>
+						<span>{this.props.city}</span>
 						<i class="iconfont icon-down"></i>
 					</Link>
 					<Link class="iconfont icon-me" to="/me" onClick={this.changeAction.bind(this,"登录")}></Link>
