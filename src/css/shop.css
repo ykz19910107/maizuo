@@ -112,3 +112,25 @@
 #shopdetails .foot a:nth-of-type(1){width: 75px;display: flex;flex-direction: column;justify-content: center;align-items: center;font-size: 12px;height: 100%;float: left}
 #shopdetails .foot a:nth-of-type(1) .icon-menu:before{content:'\e66f';line-height: 25px;font-size: 28px;}
 #shopdetails .foot a:nth-of-type(2){display: block;width: 124px;height: 50px;line-height: 50px;color: #fff;background: #ff5000;text-align: center;font-size:16px;float: right }
+
+/************商品详情页购物车**************/
+#shopdetails .shopcart{position: fixed;left: 0;top:45px;bottom: 50px;background:rgba(0,0,0,0.3);z-index: 10;width: 100%;transition: 1s;}
+#shopdetails .shopcart ul{position: absolute;bottom: 0;left: 0;background: #fff;z-index: 11;width: 100%;padding: 10px 10px 0;box-sizing: border-box;}
+#shopdetails .shopcart ul img{width: 86px;float: left;padding-bottom: 4px;}
+#shopdetails .shopcart ul li{overflow: hidden;position: relative;border-bottom: 1px solid #f2f2f2;}
+#shopdetails .shopcart ul li .cart-change{float: left;height: 86px;margin-left: 16px;}
+#shopdetails .shopcart ul li .cart-change h3{font-size: 18px;color: #ff5000;margin-top: 40px;}
+#shopdetails .shopcart ul li .cart-change p{font-size: 12px;color: #333;}
+#shopdetails .shopcart ul li i{display: block;padding: 4px;width: 16px;height: 16px;line-height: 16px;border: 1px solid #a2a2a2;border-radius: 50%;float: right;text-align: center;color:#a2a2a2;font-size: 16px }
+
+#shopdetails .shopcart ul li h4{margin-top: 8px;font-size: 14px;color: #333;}
+#shopdetails .shopcart ul li a{display: block;padding: 5px 16px;border: 1px solid rgba(0,0,0,.3);border-radius: 2px;margin: 4px 8px 4px 0;float: left;font-size: 12px;color: #333;}
+#shopdetails .shopcart ul li a.active{color: #ff5000;border-color: #ff5000;}
+
+#shopdetails .shopcart ul li .changenum{margin: 8px 0;overflow: hidden;}
+#shopdetails .shopcart ul li .changenum span{background: #fff;display: block;float: left;width: 40px;height: 28px;border: 1px solid rgba(0,0,0,.4);text-align: center;line-height: 28px;}
+#shopdetails .shopcart ul li .changenum span:nth-of-type(2){border-left: 0;border-right: 0;font-size: 12px}
+
+
+
+

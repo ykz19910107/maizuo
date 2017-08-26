@@ -21,7 +21,6 @@
 .siderbar a{display: block;height: 45px;line-height: 45px;padding:0 10px;color: #9a9a9a;}
 .siderbar a:nth-of-type(1){border-top:1px solid #333;}
 .siderbar nav{border-top:1px solid #222;height: 100%;background: #282828;width: 70%;transform: translateX(-100%);transition: 0.4s;position: absolute;top: 0;z-index: 10;}
-.siderbar nav.active{}
 .siderbar a>i{float: right;display: block;height: 45px;color: #666;}
 .siderbar a>.icon-right:before{content: '\e619';}
 

@@ -158,7 +158,6 @@ function getShopDetails(id){
 				item.marketPrice = '￥'+s
 				obj.skuList.push(item)
 			})
-			console.log(obj.skuList)
 			obj.slaveName = res.data.data.slaveName
 			resolve(obj)
 		})
