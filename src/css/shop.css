@@ -80,11 +80,35 @@
 
 
 /***************************************************商品详情页*******************************************************/
-#shopdetails{background: #fff;margin-top: 45px;margin-bottom: 50px;}
+#shopdetails{background: rgb(235,235,235);margin-top: 45px;margin-bottom: 50px;}
 
-#shopdetails #content-list{padding: 0 10px;}
+/********轮播图*********/
+#shopdetails .title .swiper-slide img{width: 100%;}
+#shopdetails .swiper-pagination-bullet-active{background: rgba(0,0,0,0.75);}
+#shopdetails .swiper-container-horizontal>.swiper-pagination-bullets,#shop .swiper-pagination-custom,#shop .swiper-pagination-fraction{bottom: 2px;}
+#shopdetails .swiper-pagination-bullet{width: 10px;height: 10px;margin: 0 10px;}
+
+/**********商品简介*************/
+#shopdetails .title .content{padding: 4px 10px;background: #FFF;}
+#shopdetails .title .content h2{font-size: 16px;overflow: hidden;text-overflow: ellipsis; white-space: nowrap;color:#333;line-height: 20px; }
+#shopdetails .title .content p{font-size: 12px;color: #757575;margin-top: 4px;margin-bottom: 4px;}
+#shopdetails .title .content strong{font-size: 22px;color: #ff5000;font-weight: bold;}
+#shopdetails .title .content .webstat{display: flex;color: #757575;}
+#shopdetails .title .content .webstat span{flex: 1;text-align: left;font-size: 12px}
+#shopdetails .title .content .webstat span:nth-of-type(2){text-align: center;}
+#shopdetails .title .content .webstat span:nth-of-type(3){text-align: right;}
+
+
+#shopdetails .title .change{margin: 10px 0;padding: 0 12px;line-height: 45px; font-size: 14px;background: #fff;}
+#shopdetails .title .change .icon-menu{float: right}
+#shopdetails .title .change .icon-menu:before{content: '\e619';line-height: 45px;text-align:center;}
+
+/*************商品图文说明*************/
+#shopdetails #content-list{padding: 0 10px;background: #fff;}
 #shopdetails #content-list img{width: 100% !important;}
 
-
-
-
+/*********底部导航**********/
+#shopdetails .foot{background: #fff;height: 50px;position:fixed;bottom: 0;left: 0;width: 100%}
+#shopdetails .foot a:nth-of-type(1){width: 75px;display: flex;flex-direction: column;justify-content: center;align-items: center;font-size: 12px;height: 100%;float: left}
+#shopdetails .foot a:nth-of-type(1) .icon-menu:before{content:'\e66f';line-height: 25px;font-size: 28px;}
+#shopdetails .foot a:nth-of-type(2){display: block;width: 124px;height: 50px;line-height: 50px;color: #fff;background: #ff5000;text-align: center;font-size:16px;float: right }

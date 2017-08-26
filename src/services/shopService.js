@@ -59,7 +59,6 @@ function getgoodChoice(page){
 //商品演出票详情数据请求
 function getNaveActive(path){
 	var str = '&page=1&pageSize=20'
-	console.log(API.naveActive+'/'+path+str)
 	return new Promise((resolve,reject)=>{
 		axios.get(API.naveActive+'/'+path+str)
 		.then((res)=>{
@@ -91,6 +90,7 @@ function getNaveActive2(path){
 		.then((res)=>{
 			var obj={}
 			obj.imageSrc=res.data.data.image
+			obj.name = res.data.data.name 
 			obj.products = []
 			axios.get(API.naveActive+'/'+newPath+str)
 			.then((res)=>{
@@ -124,7 +124,7 @@ function getNaveActive2(path){
 }
 
 //商品详情页数据请求
-//商品详情页头部结构数据请求
+//商品详情列表数据请求
 function getShopDetailsTitle(id){
 	return new Promise((resolve,reject)=>{
 		axios.get(API.shopDetailsTitle+'?id='+id)
@@ -136,17 +136,18 @@ function getShopDetailsTitle(id){
 		})
 	})
 }
-//商品详情列表数据请求
+//商品详情页头部结构数据请求
 function getShopDetails(id){
 	return new Promise((resolve,reject)=>{
 		axios.get(API.shopDetails+'?id='+id)
 		.then((res)=>{
-			console.log(res.data.data)
 			var obj = {}
 			obj.id = res.data.data.id
 			obj.masterName = res.data.data.masterName
 			obj.options = res.data.data.options
-			obj.skuList = res.data.data.skuList.map((item)=>{
+			obj.skuList = []
+			res.data.data.skuList.map((item)=>{
+			
 				var s =(item.marketPrice/100).toString()
 				if(s.indexOf('.')<0){
 					s +=".00" 
@@ -155,7 +156,9 @@ function getShopDetails(id){
 					s = arr[0]+ (arr[1]<10? '.'+arr[1]+'0':'.'+arr[1]+'00')
 				}
 				item.marketPrice = '￥'+s
+				obj.skuList.push(item)
 			})
+			console.log(obj.skuList)
 			obj.slaveName = res.data.data.slaveName
 			resolve(obj)
 		})

@@ -20,7 +20,7 @@ export default class ShopDetails extends Component{
                 {this.state.oClass=='category'?
                     <div class='category'>
                         <img src={data.imageSrc} />
-                        <p>{store.getState().shoptitle}</p>
+                        <p>{data.name}</p>
                     </div>
                 :
                     <div>
